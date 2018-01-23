@@ -1,0 +1,12 @@
+version: '2'
+services:
+  ping:
+    container_name: ping
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "1222:1222"
+    volumes:
+      - ./example.conf.yml:/etc/ping/hosts.yml
